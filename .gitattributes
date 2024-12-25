@@ -1,11 +1,14 @@
-* text=auto eol=lf
+# Normalización de EOL
+* text=auto
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
+# Archivos que deben tener LF
+*.php text eol=lf
+*.blade.php text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.sh text eol=lf
 
-/.github export-ignore
-CHANGELOG.md export-ignore
-.styleci.yml export-ignore
+# Binarios
+*.jpg binary
+*.png binary
+*.gif binary
