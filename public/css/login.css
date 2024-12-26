@@ -1,0 +1,27 @@
+body {
+    background-color: #eafaf1;
+    font-family: 'Arial', sans-serif;
+}
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+.text-primary {
+    color: #28a745 !important;
+}
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}

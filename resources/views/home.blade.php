@@ -29,17 +29,35 @@
                     <a class="nav-link" href="#">BENEFICIOS</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">AMENIDADES</a>
+                    <a class="nav-link" href="{{ route('edit') }}">EDITAR</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mapa') }}">LOTES</a>
+                    <a class="nav-link" href="{{ route('mapa') }}">MAPA</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">REGISTRARSE</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">LOGIN</a>
-                  </li>
+                    @guest
+                        <a class="nav-link" href="{{ route('login') }}">LOGIN</a>
+                    @endguest
+                </li>
+                <li class="nav-item">
+                    @guest
+                        <a class="nav-link" href="#">REGISTRARSE</a>
+                    @endguest
+                </li>
+                <li class="nav-item">
+                    @auth
+                        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                            @csrf
+                            <button type="submit" class="nav-link" style="background:none; border:none;">SALIR</button>
+                        </form>
+                    @endauth
+                </li>
+                <li class="nav-item">
+                    @auth
+                        <span class="nav-link">{{ auth()->user()->name }}</span>
+                    @endauth
+                </li>
+                            
                 </ul>
               </div>
             </div>

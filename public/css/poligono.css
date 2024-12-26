@@ -1,0 +1,110 @@
+.breadcrumb {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.poligono-image img {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.poligono-container {
+    position: relative;
+    display: inline-block;
+}
+
+.poligono-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1000;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+}
+
+.scrollable-container {
+    overflow-x: auto;
+    overflow-y: hidden; 
+    white-space: nowrap; 
+    width: 100%; 
+    height: auto; 
+}
+
+#map-container {
+    position: relative;
+    display: inline-block;
+    width: auto; 
+    height: auto;
+}
+
+.map-image {
+    display: block;
+    max-width: none; 
+    height: auto;
+}
+
+.circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.circle-name {
+    font-size: 8px;
+}
+
+.circle-available {
+    font-size: 8px;
+}
+
+.circle.green {
+    background-color: green;
+}
+
+.circle.yellow {
+    background-color: yellow;
+    color: black;
+}
+
+.circle.red {
+    background-color: red;
+}
+
+.scrollable-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.modal-body {
+    font-size: 16px;
+}

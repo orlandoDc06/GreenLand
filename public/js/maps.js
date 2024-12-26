@@ -15,7 +15,7 @@ fetch('/api/poligonos')
                 const circle = document.createElement('div');
                 circle.className = 'circle text-center';
                 circle.style.left = `${coordenada_x + 45}px`;
-                circle.style.top = `${coordenada_y + 5}px`;
+                circle.style.top = `${coordenada_y }px`;
 
                 circle.innerHTML = `
                     <div class="circle-name">${nombre_poligono}</div>
@@ -23,6 +23,11 @@ fetch('/api/poligonos')
                 `;
 
                 mapContainer.appendChild(circle);
+
+                circle.addEventListener('click', () => {
+                    window.location.href = `/poligonos/${id}`;
+                });
+                
             });
         } else {
             console.error(data.message);

@@ -11,8 +11,10 @@
         <h5 class="mb-3">Mapa Completo</h5>
         <div class="card">
             <div class="card-body p-0 position-relative">
-                <div id="map-container"></div>
-                <div id="tooltip" class="tooltip"></div>
+                <div class="map-wrapper">
+                    <div id="map-container"></div>  
+                    <div id="tooltip" class="tooltip"></div>
+                </div>
             </div>
         </div>
     </div>
