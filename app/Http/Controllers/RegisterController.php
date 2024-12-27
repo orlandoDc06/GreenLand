@@ -15,7 +15,16 @@ class RegisterController extends Controller
             'name' => 'required|string|max:70',
             'email' => 'required|string|email|max:40|unique:users,email',
             'telefono' => 'nullable|digits_between:8,15',
-            'password' => 'required|string|min:8|max:40|confirmed',
+            'password' => [
+                'required',
+                'string',
+                'min:8',
+                'max:40',
+                'confirmed',
+                'regex:/[A-Z]/', 
+                'regex:/[0-9]/',
+                'regex:/[@$!%*?&#.]/' 
+            ],
         ], [
             'name.required' => 'El nombre es obligatorio.',
             'name.max' => 'El nombre no puede tener más de 70 caracteres.',
@@ -27,6 +36,7 @@ class RegisterController extends Controller
             'password.min' => 'La contraseña debe tener al menos 8 caracteres.',
             'password.max' => 'La contraseña no puede tener más de 40 caracteres.',
             'password.confirmed' => 'Las contraseñas no coinciden.',
+            'password.regex' => 'La contraseña debe contener al menos una letra mayúscula, un número y un carácter especial.',
         ]);
     
         try {

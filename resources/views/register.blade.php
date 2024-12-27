@@ -37,17 +37,25 @@
                             @enderror
                         </div>
                         
-                        <div class="mb-3">
+                        <div class="mb-3 position-relative">
                             <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
-                            @error('password')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
+                            <div class="input-group">
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
+                                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                                    <i class="bi bi-eye-slash" id="togglePasswordIcon"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 position-relative">
                             <label for="password_confirmation" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirme su contraseña" required>
+                            <div class="input-group">
+                                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirme su contraseña" required>
+                                <button type="button" class="btn btn-outline-secondary" id="toggleConfirmPassword">
+                                    <i class="bi bi-eye-slash" id="toggleConfirmPasswordIcon"></i>
+                                </button>
+                            </div>
                         </div>
+                        
                         <button type="submit" class="btn btn-primary w-100">Registrarse</button>
                     </form>
                 </div>
