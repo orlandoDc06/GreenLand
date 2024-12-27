@@ -14,14 +14,15 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        // Crear usuario admin
         $admin = User::create([
             'name' => 'admin', // Nombre del usuario
             'email' => 'admin@example.com', // Correo del usuario
             'password' => bcrypt('12345678'), // Contraseña encriptada
         ]);
 
-        // Obtener el rol de admin
-        $adminRole = Role::where('name', 'admin')->first();
+        // Verificar si el rol de admin existe
+        $adminRole = Role::firstOrCreate(['name' => 'admin']);
 
         // Asignar el rol al usuario
         $admin->assignRole($adminRole);
