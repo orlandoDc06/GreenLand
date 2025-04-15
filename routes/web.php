@@ -23,8 +23,7 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 
 //LOGOUT
-Route::post('/logout', [AuthController::class, 'destroy'])
-    ->name('logout');
+Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
 
 //REGISTER
 Route::view('/register', 'register')->name('register');
@@ -61,11 +60,12 @@ Route::get('/poligonos/{id}', [PoligonoController::class, 'show'])->name('poligo
 // API LOTES POR POLÍGONO
 Route::get('/api/lotes/{poligono}', [LoteController::class, 'getLotesByPoligono'])->name('lotes.byPoligono');
 
-
-
 // ACTUALIZAR LOTE
 Route::post('/lotes/update/{id}', [LoteController::class, 'update'])->name('lotes.update');
 
 // API LOTE POR ID
 Route::get('/api/lote/{id}', [LoteController::class, 'getLoteById']);
 
+// EDITAR MAPA
+Route::get('/edit-map', [PoligonoController::class, 'editMap'])->middleware('auth')->name('edit.map');
+Route::post('/poligono/update', [PoligonoController::class, 'updateMap'])->name('update.poligono');

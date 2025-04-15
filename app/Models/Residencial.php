@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Residencial extends Model
 {
+    protected $table = 'residenciales';
     protected $fillable = ['nombre_residencial', 'ubicacion', 'total_poligonos'];
 
     public function poligonos()

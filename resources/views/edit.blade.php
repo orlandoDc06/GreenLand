@@ -1,13 +1,13 @@
 @extends('home')
 
-@section('title', 'Editar Lotes Disponibles')
+@section('title', 'Editar Polignos')
 
 @section('content')
 <div class="container py-5">
     <h1 class="text-center mb-4">Editar </h1>
 
-
-    {{-- Formulario de Lotes --}}
+    {{-- Botones --}}
+ 
     <div class="mt-5">
         <h2 class="mb-4">Editar Lotes</h2>
 
@@ -53,14 +53,18 @@
                 <input type="text" id="superficie" name="superficie" class="form-control" placeholder="Superficie del lote" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            
+            <div class="text-center mb-4">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2">Editar Mapa</a>
+                <button class="btn btn-danger">Eliminar</button>
+            </div>
         </form>
     </div>
 </div>
-
-
 @endsection
 
 @push('scripts')
     <script src="{{ asset('js/edit.js') }}"></script>
+
 @endpush

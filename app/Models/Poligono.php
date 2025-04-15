@@ -6,7 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Poligono extends Model
 {
-    protected $fillable = ['nombre_poligono', 'total_lotes', 'lotes_disponibles', 'residencial_id'];
+    protected $fillable = [
+        'nombre_poligono', 
+        'total_lotes', 
+        'lotes_disponibles', 
+        'coordenada_x', 
+        'coordenada_y', 
+        'residencial_id',
+    ];
 
     public function residencial()
     {
