@@ -15,7 +15,7 @@ fetch('/api/poligonos')
                 const circle = document.createElement('div');
                 circle.className = 'circle text-center';
                 circle.style.left = `${coordenada_x + 45}px`;
-                circle.style.top = `${coordenada_y }px`;
+                circle.style.top = `${coordenada_y - 15}px`;
 
                 circle.innerHTML = `
                     <div class="circle-name">${nombre_poligono}</div>
