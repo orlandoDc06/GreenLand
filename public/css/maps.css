@@ -1,8 +1,8 @@
 #map-container {
     position: relative;
     width: 1200px;
-    height: 800px;
-    background-image: url('../images/mapa.jpg');
+    height: 1300px;
+    background-image: url('../images/MODELO\ GENERAL.png');
     background-size: cover;
     background-position: center;
     border-radius: 5px;
@@ -34,20 +34,20 @@
     background-color: rgba(0, 123, 255, 0.8);
     border-radius: 50%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 14px; 
+    font-size: 14px;
     cursor: pointer;
     transform: translate(-50%, -50%);
 }
 
 .circle-name {
-    font-weight: bold; 
+    font-weight: bold;
     font-size: 12px;
 }
 
 .circle-available .small-text {
-    font-size: 10px; 
+    font-size: 10px;
 }

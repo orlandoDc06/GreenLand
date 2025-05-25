@@ -14,7 +14,7 @@ class PoligonoController extends Controller
     public function getPoligonos()
     {
         $poligonos = DB::table('poligonos')
-            ->select('id', 'nombre_poligono', 'total_lotes', 'lotes_disponibles', 'disponibilidad', 'coordenada_x', 'coordenada_y') 
+            ->select('id', 'nombre_poligono', 'total_lotes', 'lotes_disponibles', 'disponibilidad', 'coordenada_x', 'coordenada_y')
             ->get();
 
         return response()->json(['success' => true, 'poligonos' => $poligonos]);
@@ -31,20 +31,20 @@ class PoligonoController extends Controller
     {
         $residenciales = Residencial::all();
         $poligonos = Poligono::all();
-    
+
         return view('editMap', compact('poligonos', 'residenciales'));
     }
-    
+
     public function getPoligonoById($id)
     {
         $poligono = Poligono::find($id);
-    
+
         if (!$poligono) {
             return response()->json(['success' => false, 'message' => 'Polígono no encontrado'], 404);
         }
-    
+
         return response()->json(['success' => true, 'poligono' => $poligono]);
-    }    
+    }
 
     public function update(Request $request)
     {
@@ -60,7 +60,7 @@ class PoligonoController extends Controller
 
         return redirect()->route('edit')->with('success', 'Lotes disponibles actualizados correctamente.');
     }
-    
+
     public function updateMap(Request $request)
     {
         $request->validate([
@@ -71,51 +71,56 @@ class PoligonoController extends Controller
             'coordenada_y' => 'required|integer',
             'residencial_id' => 'required|exists:residenciales,id',
         ]);
-    
+
         try {
             $poligono = Poligono::create([
                 'nombre_poligono' => $request->nombre_poligono,
                 'total_lotes' => $request->total_lotes,
                 'lotes_disponibles' => $request->lotes_disponibles,
-                'disponibilidad' => $request->lotes_disponibles, 
+                'disponibilidad' => $request->lotes_disponibles,
                 'coordenada_x' => $request->coordenada_x,
                 'coordenada_y' => $request->coordenada_y,
                 'residencial_id' => $request->residencial_id,
             ]);
 
-        for ($i = 1; $i <= $request->total_lotes; $i++) {
-            Lote::create([
-                'poligono_id' => $poligono->id,
-                'name' => "Lote $i",
-                'precio' => 0.00, 
-                'estado' => 'Disponible',
-            ]);
-        }
+            for ($i = 1; $i <= $request->total_lotes; $i++) {
+                try {
+                    Lote::create([
+                        'poligono_id' => $poligono->id,
+                        'codigo_lote' => "Lote $i",
+                        'precio_lote' => 0.00,
+                        'estado' => 'Disponible',
+                    ]);
+                } catch (\Exception $e) {
+                    \Log::error('Error al crear lote: ' . $e->getMessage());
+
+                }
+            }
 
             return redirect()->route('edit.map')->with('success', 'Polígono creado exitosamente.');
         } catch (\Exception $e) {
             return redirect()->route('edit.map')->with('error', 'Error al crear el polígono: ' . $e->getMessage());
         }
     }
-    
-    
+
+
 
     public function show($poligonoId)
     {
         $poligono = Poligono::findOrFail($poligonoId);
         $lotes = Lote::where('poligono_id', $poligonoId)->get();
-    
+
         return view('poligono', compact('poligono', 'lotes'));
     }
-    
+
     public function getLotesByPoligono($id)
     {
         $lotes = Lote::where('poligono_id', $id)->get();
-    
+
         if ($lotes->isEmpty()) {
             return response()->json(['success' => false, 'message' => 'No hay lotes para este polígono']);
         }
-    
+
         return response()->json(['success' => true, 'lotes' => $lotes]);
     }
 
@@ -129,9 +134,9 @@ class PoligonoController extends Controller
             'coordenada_y' => 'required|integer',
             'residencial_id' => 'required|exists:residenciales,id',
         ]);
-    
+
         $slug = Str::slug($request->nombre_poligono);
-    
+
         $poligono = Poligono::create([
             'residencial_id' => $request->residencial_id,
             'nombre_poligono' => $request->nombre_poligono,
@@ -141,17 +146,22 @@ class PoligonoController extends Controller
             'coordenada_y' => $request->coordenada_y,
             'slug' => $slug,
         ]);
-    
+
         for ($i = 1; $i <= $request->total_lotes; $i++) {
-            Lote::create([
-                'poligono_id' => $poligono->id,
-                'name' => "Lote $i",
-                'precio' => 0.00, 
-                'estado' => 'Disponible',
-            ]);
+            try {
+                Lote::create([
+                    'poligono_id' => $poligono->id,
+                    'codigo_lote' => "Lote $i",
+                    'precio_lote' => 0.00,
+                    'estado' => 'Disponible',
+                ]);
+            } catch (\Exception $e) {
+                \Log::error('Error al crear lote: ' . $e->getMessage());
+                // Puedes decidir si continuar o detener el proceso
+            }
         }
-    
+
         return redirect()->route('mapa.edit')->with('success', 'Polígono y lotes agregados exitosamente.');
-    }    
+    }
 
 }

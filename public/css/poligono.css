@@ -26,6 +26,7 @@
     display: block;
     width: 100%;
     height: auto;
+    padding: 100px;
 }
 
 .tooltip {
@@ -42,22 +43,22 @@
 
 .scrollable-container {
     overflow-x: auto;
-    overflow-y: hidden; 
-    white-space: nowrap; 
-    width: 100%; 
-    height: auto; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: auto;
 }
 
 #map-container {
     position: relative;
     display: inline-block;
-    width: auto; 
+    width: auto;
     height: auto;
 }
 
 .map-image {
     display: block;
-    max-width: none; 
+    max-width: none;
     height: auto;
 }
 

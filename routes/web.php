@@ -2,7 +2,7 @@
 use App\Models\Lote;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoligonoController;
-use App\Http\Controllers\AuthController;    
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoteController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\RegisterController;

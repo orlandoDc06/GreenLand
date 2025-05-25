@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mapContainer = document.getElementById('map-container');
 
                 data.lotes.forEach(lote => {
-                    const { id, name, precio, estado, coordenada_x, coordenada_y, superficie } = lote;
+                    const { id, codigo_lote, precio_lote, estado, coordenada_x, coordenada_y, superficie_m } = lote;
 
                     // Verifica si el nombre es null
                     if (name === null) {
@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Evento al hacer clic en el círculo
                     circle.addEventListener('click', () => {
                         // Llenar el modal con la información del lote
-                        document.getElementById('modal-lote-name').textContent = name;
-                        document.getElementById('modal-lote-precio').textContent = precio;
-                        document.getElementById('modal-lote-superficie').textContent = superficie;
+                        document.getElementById('modal-lote-name').textContent = codigo_lote;
+                        document.getElementById('modal-lote-precio').textContent = precio_lote;
+                        document.getElementById('modal-lote-superficie').textContent = superficie_m;
                         document.getElementById('modal-lote-estado').textContent = estado;
 
                         // Mostrar el modal
