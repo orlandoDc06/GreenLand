@@ -112,6 +112,13 @@ class PoligonoController extends Controller
 
         return view('poligono', compact('poligono', 'lotes'));
     }
+    public function mostrar($poligonoId)
+    {
+        $poligono = Poligono::findOrFail($poligonoId);
+        $lotes = Lote::where('poligono_id', $poligonoId)->get();
+
+        return view('poligono', compact('poligono', 'lotes'));
+    }
 
     public function getLotesByPoligono($id)
     {
