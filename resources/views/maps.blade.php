@@ -40,4 +40,5 @@
 
 @push('scripts')
     <script src="{{ asset('js/maps.js') }}"></script>
+    
 @endpush
