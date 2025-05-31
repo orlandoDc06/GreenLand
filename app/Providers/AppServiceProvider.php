@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,7 +21,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        if (config('app.env') === 'production') {
+        // Solo forzar HTTPS si la aplicación está completamente inicializada
+        if ($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
+        // Alternativa más segura para Railway
+        if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
             URL::forceScheme('https');
         }
     }
