@@ -26,7 +26,8 @@
     position: relative;
     width: 1200px;
     height: 1300px;
-    background-image: url('{{ asset("images/model.webp") }}');
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/y20-dee82.firebasestorage.app/o/MODELO%20GENERAL(1).png?alt=media&token=9aac343f-1234-49d5-a8c9-f535c1d5155c');
+
     background-size: cover;
     background-position: center;
     border-radius: 5px;
