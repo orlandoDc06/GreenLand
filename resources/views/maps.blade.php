@@ -25,7 +25,7 @@
     position: relative;
     width: 1200px;
     height: 1300px;
-    background-image: url('{{ asset("images/Modelo.webp") }}');
+    background-image: url('{{ asset("images/Modelo.png") }}');
     background-size: cover;
     background-position: center;
     border-radius: 5px;
