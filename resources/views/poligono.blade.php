@@ -3,47 +3,71 @@
 @section('title', 'Cotice su lote')
 
 @section('content')
+<!-- Reemplaza tu contenedor actual con esta versión mejorada -->
 <div class="container py-4">
     <h1 class="text-center">Cotice su lote</h1>
-
     <div class="container d-flex flex-column align-items-center mt-4">
         <div class="breadcrumb mt-4">
             <p class="breadcrumb-item">Mapa Polígono</p>
             <span class="breadcrumb-item active">{{ $poligono->nombre_poligono }}</span>
         </div>
-    
         <div class="legend mt-3 d-flex justify-content-center">
             <span class="badge bg-success me-2">Disponible</span>
             <span class="badge bg-warning me-2">Reservado</span>
             <span class="badge bg-danger">Vendido</span>
         </div>
 
-        <!-- Contenedor desplazable y centrado -->
-        <div class="scrollable-container d-flex justify-content-center mt-5">
-            <div id="map-container" 
-                class="position-relative" 
-                data-poligono-id="{{ $poligono->id }}">
-                <!-- Imagen del mapa -->
-                <img src="{{ asset('images/poligonos/' . $poligono->id . '.png') }}" 
-                    alt="{{ $poligono->nombre_poligono }}" 
-                    class="map-image">
+        <!-- Contenedor mejorado para mostrar imagen completa -->
+        <div class="w-100 mt-5">
+            <div class="scrollable-container">
+                <div id="map-container"
+                     class="position-relative mx-auto"
+                     data-poligono-id="{{ $poligono->id }}">
+                    <!-- Imagen del mapa -->
+                    <img src="{{ asset('images/poligonos/' . $poligono->id . '.png') }}"
+                         alt="{{ $poligono->nombre_poligono }}"
+                         class="map-image">
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Modal -->
 <div class="modal fade" id="cotizarLoteModal" tabindex="-1" aria-labelledby="cotizarLoteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cotizarLoteModalLabel">Cotizar Lote</h5>
+                <h5 class="modal-title" id="cotizarLoteModalLabel">Información del Lote</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p><strong>Lote:</strong> <span id="modal-lote-name"></span></p>
-                <p><strong>Precio:</strong> $<span id="modal-lote-precio"></span></p>
-                <p><strong>Superficie:</strong> <span id="modal-lote-superficie"></span></p>
-                <p><strong>Estado:</strong> <span id="modal-lote-estado"></span></p>
+                <div class="container-fluid">
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Código del Lote:</strong></div>
+                        <div class="col-sm-8" id="modal-lote-name">-</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Precio del Lote:</strong></div>
+                        <div class="col-sm-8" id="modal-lote-precio">-</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Precio al Contado:</strong></div>
+                        <div class="col-sm-8" id="modal-lote-precio-contado">-</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Años de Financiamiento:</strong></div>
+                        <div class="col-sm-8" id="modal-lote-anos-financiamiento">-</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4"><strong>Dirección:</strong></div>
+                        <div class="col-sm-8" id="modal-lote-direccion">-</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-4" ><strong>Estado:</strong></div>
+                        <div class="col-sm-8"id="modal-lote-estado">-</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

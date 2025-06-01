@@ -3,6 +3,15 @@ const poligonoSelect = document.getElementById('poligono_id');
 const loteSelect = document.getElementById('lote_id');
 const loteForm = document.getElementById('lote-form');
 
+// Elementos para cálculos automáticos
+const superficieVInput = document.getElementById('superficie_v');
+const precioSVInput = document.getElementById('precio_s_v');
+const precioLoteInput = document.getElementById('precio_lote');
+const pcontadoPorcentInput = document.getElementById('pcontado_porcent');
+const vprimaPorcentInput = document.getElementById('vprima_porcent');
+
+// Variables para controlar qué campo fue editado por el usuario
+let ultimoCampoEditado = null;
 
 // Cargar lotes al seleccionar un polígono
 poligonoSelect.addEventListener('change', () => {
@@ -79,6 +88,9 @@ loteSelect.addEventListener('change', () => {
                     // Actualizar la acción del formulario
                     loteForm.action = `/lotes/update/${lote.id}`;
                     console.log('Datos del lote cargados correctamente en el formulario');
+
+                    // Resetear el control de último campo editado
+                    ultimoCampoEditado = null;
                 } else {
                     console.warn('La respuesta del servidor no contiene datos válidos del lote');
                 }
@@ -89,4 +101,101 @@ loteSelect.addEventListener('change', () => {
     }
 });
 
+// Función para recalcular precios
+function recalcularPrecios() {
+    const superficieV = parseFloat(superficieVInput.value) || 0;
+    const precioSV = parseFloat(precioSVInput.value) || 0;
+    const precioLote = parseFloat(precioLoteInput.value) || 0;
 
+    if (superficieV === 0) {
+        console.warn('La superficie en varas cuadradas debe ser mayor a 0 para realizar cálculos');
+        return;
+    }
+
+    // Si el último campo editado fue precio_lote, recalcular precio_s_v
+    if (ultimoCampoEditado === 'precio_lote' && precioLote > 0) {
+        const nuevoPrecioSV = precioLote / superficieV;
+        precioSVInput.value = nuevoPrecioSV.toFixed(2);
+        console.log(`Precio por V² recalculado: ${nuevoPrecioSV.toFixed(2)}`);
+    }
+    // Si el último campo editado fue precio_s_v, recalcular precio_lote
+    else if (ultimoCampoEditado === 'precio_s_v' && precioSV > 0) {
+        const nuevoPrecioLote = precioSV * superficieV;
+        precioLoteInput.value = nuevoPrecioLote.toFixed(2);
+        console.log(`Precio del lote recalculado: ${nuevoPrecioLote.toFixed(2)}`);
+    }
+
+    // Recalcular campos derivados si es necesario
+    recalcularCamposDerivados();
+}
+
+// Función para recalcular campos derivados (para futura implementación si es necesario)
+function recalcularCamposDerivados() {
+    const precioLote = parseFloat(precioLoteInput.value) || 0;
+    const pcontadoPorcent = parseFloat(pcontadoPorcentInput.value) || 0;
+    const vprimaPorcent = parseFloat(vprimaPorcentInput.value) || 0;
+
+    if (precioLote > 0) {
+        // Los cálculos se realizan en el backend al guardar
+        console.log(`Precio del lote actual: ${precioLote.toFixed(2)}`);
+    }
+}
+
+// Event listeners para detectar cambios en los campos de precio
+precioLoteInput.addEventListener('input', () => {
+    ultimoCampoEditado = 'precio_lote';
+    recalcularPrecios();
+});
+
+precioSVInput.addEventListener('input', () => {
+    ultimoCampoEditado = 'precio_s_v';
+    recalcularPrecios();
+});
+
+// Event listener para cambios en superficie_v (puede afectar los cálculos)
+superficieVInput.addEventListener('input', () => {
+    // Si hay un precio establecido, recalcular basado en el último campo editado
+    if (ultimoCampoEditado) {
+        recalcularPrecios();
+    }
+});
+
+// Event listeners para recalcular campos derivados
+pcontadoPorcentInput.addEventListener('input', recalcularCamposDerivados);
+vprimaPorcentInput.addEventListener('input', recalcularCamposDerivados);
+
+// Event listener para cuando el usuario hace focus en un campo (para mejor UX)
+precioLoteInput.addEventListener('focus', () => {
+    precioLoteInput.select(); // Selecciona todo el texto al hacer focus
+});
+
+precioSVInput.addEventListener('focus', () => {
+    precioSVInput.select(); // Selecciona todo el texto al hacer focus
+});
+
+// Validación antes del envío del formulario
+loteForm.addEventListener('submit', (e) => {
+    const superficieV = parseFloat(superficieVInput.value) || 0;
+    const precioLote = parseFloat(precioLoteInput.value) || 0;
+    const precioSV = parseFloat(precioSVInput.value) || 0;
+
+    if (superficieV <= 0) {
+        e.preventDefault();
+        alert('La superficie en varas cuadradas debe ser mayor a 0');
+        return false;
+    }
+
+    if (precioLote <= 0) {
+        e.preventDefault();
+        alert('El precio del lote debe ser mayor a 0');
+        return false;
+    }
+
+    if (precioSV <= 0) {
+        e.preventDefault();
+        alert('El precio por vara cuadrada debe ser mayor a 0');
+        return false;
+    }
+
+    console.log('Formulario validado, enviando datos...');
+});
