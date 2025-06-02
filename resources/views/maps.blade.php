@@ -27,12 +27,20 @@
     width: 1200px;
     height: 1300px;
 
-    background-image: url('{{ asset("images/Modelo.png") }}');
+    background-image: url('{{ asset("images/model.webp") }}');
     background-size: cover;
     background-position: center;
     border-radius: 5px;
 }
+
+/* Alternativa para pantallas pequeñas (como móviles) */
+@media (max-width: 768px) {
+    #map-container {
+        background-image: url('{{ asset("images/model.jpg") }}');
+    }
+}
 </style>
+
 @endsection
 
 @push('styles')
