@@ -27,7 +27,7 @@
     width: 1200px;
     height: 1300px;
 
-    background-image: url('{{ asset("images/model2.webp") }}');
+    background-image: url('{{ asset("images/model2.png") }}');
     background-size: cover;
     background-position: center;
     border-radius: 5px;
