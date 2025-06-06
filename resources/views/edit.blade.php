@@ -82,7 +82,7 @@
                 <div class="col-md-6 mb-3 d-none">
                     <label for="vprima_porcent" class="form-label">porcentaje utilizado para sacar el valor de la prima</label>
                     <input type="number" step="0.01" id="vprima_porcent" name="vprima_porcent" class="form-control">
-                </div> 
+                </div>
             </div>
 
             <div class="mb-3">
@@ -111,14 +111,14 @@
             </div>
 
             <div class="mb-3">
-                <label for="descuento" class="form-label">Descuento (%)</label>
+                <label for="descuento" class="form-label d-none">Descuento (%)</label>
                 <input type="number" step="0.01" id="descuento" name="descuento" class="form-control" min="0" max="100">
             </div>
 
             <div class="text-center mb-4">
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2">Editar Mapa</a>
-                <button type="button" id="btn-eliminar" class="btn btn-danger">Eliminar</button>
+                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2 d-none">Editar Mapa</a>
+                <button type="button" id="btn-eliminar" class="btn btn-danger d-none">Eliminar</button>
             </div>
         </form>
     </div>
