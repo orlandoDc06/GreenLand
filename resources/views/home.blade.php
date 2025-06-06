@@ -116,7 +116,7 @@
         </div>
 
         <div class="row g-4">
-            @foreach (['7.png', '11.png', '13.png', '15.png'] as $img)
+            @foreach (['7.jpg', '11.jpg', '13.jpg', '15.jpg'] as $img)
             <div class="col-md-6 animate-fade-up">
                 <div class="render-card shadow rounded overflow-hidden">
                     <img src="{{ asset('images/renders/' . $img) }}" alt="Render {{ $img }}" class="img-fluid w-100">
