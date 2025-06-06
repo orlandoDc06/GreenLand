@@ -11,7 +11,7 @@
             <p class="breadcrumb-item">Mapa Polígono</p>
             <span class="breadcrumb-item active">{{ $poligono->nombre_poligono }}</span>
         </div>
-    
+
         <div class="legend mt-3 d-flex justify-content-center">
             <span class="badge bg-success me-2">Disponible</span>
             <span class="badge bg-warning me-2">Reservado</span>
@@ -20,12 +20,12 @@
 
         <!-- Contenedor desplazable y centrado -->
         <div class="scrollable-container d-flex justify-content-center mt-5">
-            <div id="map-container" 
-                class="position-relative" 
+            <div id="map-container"
+                class="position-relative"
                 data-poligono-id="{{ $poligono->id }}">
                 <!-- Imagen del mapa -->
-                <img src="{{ asset('images/poligonos/' . $poligono->id . '.png') }}" 
-                    alt="{{ $poligono->nombre_poligono }}" 
+                <img src="{{ asset('images/poligonos/' . $poligono->id . '.png') }}"
+                    alt="{{ $poligono->nombre_poligono }}"
                     class="map-image">
             </div>
         </div>
@@ -123,8 +123,8 @@
 
         <!-- Estado (con fondo según estado) -->
         <div id="modal-lote-estado" class="badge rounded-pill px-3 py-2 mb-4 text-white" style="font-size: 1rem;">
-          -
-        </div>
+                  -
+</div>
 
         <!-- Información en filas -->
         <div class="container text-start">

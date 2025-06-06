@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         coordenada_x,
                         coordenada_y,
                         superficie_m,
+                        superficie_v,
                         pcontado_porcent
                     } = lote;
 
@@ -53,6 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         console.log('precio_lote:', precio_lote);
                         console.log('pcontado_porcent:', pcontado_porcent);
                         console.log('direccion:', direccion);
+                        console.log('superficie_m:', superficie_m);
+                        console.log('superficie_v:', superficie_v);
 
                         // Calcular precio al contado con validaciones
                         let precioContado = precio_lote;
@@ -62,10 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Llenar el modal con la información del lote
                         document.getElementById('modal-lote-name').textContent = codigo_lote || 'Sin código';
-                        document.getElementById('modal-lote-precio').textContent = precio_lote ? `${precio_lote.toLocaleString()}` : 'No disponible';
-                        document.getElementById('modal-lote-precio-contado').textContent = precioContado ? `${precioContado.toLocaleString()}` : 'No disponible';
+                        document.getElementById('modal-lote-precio').textContent = precio_lote ? `$${precio_lote.toLocaleString()}` : 'No disponible';
+                        document.getElementById('modal-lote-precio-contado').textContent = precioContado ? `$${precioContado.toLocaleString()}` : 'No disponible';
                         document.getElementById('modal-lote-direccion').textContent = direccion && direccion.trim() !== '' ? direccion : 'No especificada';
                         document.getElementById('modal-lote-estado').textContent = estado || 'Sin estado';
+
+                        // Agregar información de superficies
+                        document.getElementById('modal-lote-superficie-vara').textContent = superficie_v ? `${parseFloat(superficie_v).toLocaleString()} v²` : 'No especificada';
+                        document.getElementById('modal-lote-superficie-metro').textContent = superficie_m ? `${parseFloat(superficie_m).toLocaleString()} m²` : 'No especificada';
 
                         // Aplica el estado como badge con color
                         setEstadoBadge(estado);
