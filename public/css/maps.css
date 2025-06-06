@@ -2,7 +2,7 @@
   position: relative;
   width: 1200px;
   height: 1300px;
-  background-image: url("../images/MODELO GENERAL.png");
+  background-image: url("../images/models.png");
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -35,21 +35,21 @@
     background-color: #538D88CC;;
     border-radius: 55%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 14px; 
+    font-size: 14px;
     cursor: pointer;
     transform: translate(-50%, -50%);
 }
 
 .circle-name {
-    font-weight: bold; 
+    font-weight: bold;
     font-size: 12px;
 }
 
 .circle-available .small-text {
-    font-size: 10px; 
+    font-size: 10px;
 }
 
