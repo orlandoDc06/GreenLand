@@ -9,16 +9,16 @@
     <div id="backgroundCarousel" class="carousel slide carousel-fade position-absolute w-100 h-100" data-bs-ride="carousel" data-bs-interval="9000">
         <div class="carousel-inner h-100">
             <div class="carousel-item active h-100">
-                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/7.png') }}');"></div>
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/7.jpg') }}');"></div>
             </div>
             <div class="carousel-item h-100">
-                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/11.png') }}');"></div>
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/11.jpg') }}');"></div>
             </div>
             <div class="carousel-item h-100">
-                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/13.png') }}');"></div>
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/13.jpg') }}');"></div>
             </div>
             <div class="carousel-item h-100">
-                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/15.png') }}');"></div>
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/15.jpg') }}');"></div>
             </div>
         </div>
     </div>
@@ -278,8 +278,8 @@
         <div class="render-scroll-container animate-fade-up">
             <div class="render-scroll d-flex gap-3">
                 @foreach ([
-                '1.png','2.jpg','3.png','4.png','5.jpg','7.png',
-                '8.jpg','9.jpg','11.png','12.jpg','15.png','17.jpg'
+                '1.png','2.jpg','3.png','4.png','5.jpg','7.jpg',
+                '8.jpg','9.jpg','11.jpg','12.jpg','15.jpg','17.jpg'
                 ] as $img)
                 <div class="render-item">
                     <img src="{{ asset('images/renders/' . $img) }}" alt="Render {{ $img }}" class="img-fluid rounded shadow-sm" style="height: 250px; width: auto;">
