@@ -64,9 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.getElementById('modal-lote-name').textContent = codigo_lote || 'Sin código';
                         document.getElementById('modal-lote-precio').textContent = precio_lote ? `${precio_lote.toLocaleString()}` : 'No disponible';
                         document.getElementById('modal-lote-precio-contado').textContent = precioContado ? `${precioContado.toLocaleString()}` : 'No disponible';
-                        document.getElementById('modal-lote-anos-financiamiento').textContent = 'Hasta 10 años';
                         document.getElementById('modal-lote-direccion').textContent = direccion && direccion.trim() !== '' ? direccion : 'No especificada';
                         document.getElementById('modal-lote-estado').textContent = estado || 'Sin estado';
+
+                        // Aplica el estado como badge con color
+                        setEstadoBadge(estado);
 
                         // Mostrar el modal
                         const modal = new bootstrap.Modal(document.getElementById('cotizarLoteModal'));
@@ -80,3 +82,25 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error al obtener los lotes:', error));
 });
+
+
+function setEstadoBadge(estado) {
+  const badge = document.getElementById("modal-lote-estado");
+  badge.textContent = estado;
+
+  badge.classList.remove("badge-disponible", "badge-reservado", "badge-vendido");
+console.log("Estado del lote:", estado); // Debug: mostrar el estado del lote
+  switch (estado) {
+    case "Disponible":
+      badge.classList.add("badge-disponible");
+      break;
+    case "Reservado":
+      badge.classList.add("badge-reservado");
+      break;
+    case "Vendido":
+      badge.classList.add("badge-vendido");
+      break;
+    default:
+      badge.style.backgroundColor = "#6c757d"; // gris neutro
+  }
+}

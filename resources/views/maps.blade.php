@@ -19,20 +19,13 @@
         </div>
     </div>
 
+    <div class="text-center mt-4">
+        <p class="text-muted">
+            <i class="bi bi-info-circle me-2"></i>
+            Haga clic en cualquier área del mapa para ver más detalles
+        </p>
+    </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<style>
-#map-container {
-    position: relative;
-    width: 1200px;
-    height: 1300px;
-
-    background-image: url('{{ asset("images/MODELO GENERAL.png") }}');
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px;
-}
-</style>
 @endsection
 
 @push('styles')
@@ -44,3 +37,5 @@
     <script src="{{ asset('js/maps.js') }}"></script>
 
 @endpush
+
+
