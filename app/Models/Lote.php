@@ -13,11 +13,20 @@ class Lote extends Model
 
     protected $fillable = [
         'poligono_id',
-        'name',
-        'precio',
+        'codigo_lote',
+        'superficie_m',
+        'superficie_v',
+        'precio_s_v',
+        'precio_lote',
+        'pcontado_porcent',
+        'vprima_porcent',
+        'direccion',
         'estado',
+        'coordenada_x',
+        'coordenada_y',
+        'descuento'
     ];
-    
+
     public function poligono()
     {
         return $this->belongsTo(Poligono::class);
