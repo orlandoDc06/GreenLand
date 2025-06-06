@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/mapa', function () {
     return view('maps');
 })->name('mapa');
+
+Route::view('/maps', 'maps')->name('maps');
 
 
 //LOGIN
