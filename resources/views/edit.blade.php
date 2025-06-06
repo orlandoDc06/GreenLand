@@ -110,8 +110,8 @@
                 </div>
             </div>
 
-            <div class="mb-3">
-                <label for="descuento" class="form-label d-none">Descuento (%)</label>
+            <div class="mb-3 d-none">
+                <label for="descuento" class="form-label ">Descuento (%)</label>
                 <input type="number" step="0.01" id="descuento" name="descuento" class="form-control" min="0" max="100">
             </div>
 
