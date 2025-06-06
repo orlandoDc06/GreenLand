@@ -6,23 +6,22 @@
 <!-- Inicio -->
 <section id="inicio" class="hero position-relative" style="height: 100vh; overflow: hidden;">
     <!-- Carousel de fondo -->
-<div id="backgroundCarousel" class="carousel slide carousel-fade position-absolute w-100 h-100" data-bs-ride="carousel" data-bs-interval="9000">
-    <div class="carousel-inner h-100">
-        <div class="carousel-item active h-100">
-            <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/7.jpg') }}');"></div>
-        </div>
-        <div class="carousel-item h-100">
-            <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/11.jpg') }}');"></div>
-        </div>
-        <div class="carousel-item h-100">
-            <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/13.jpg') }}');"></div>
-        </div>
-        <div class="carousel-item h-100">
-            <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/15.jpg') }}');"></div>
+    <div id="backgroundCarousel" class="carousel slide carousel-fade position-absolute w-100 h-100" data-bs-ride="carousel" data-bs-interval="9000">
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/7.png') }}');"></div>
+            </div>
+            <div class="carousel-item h-100">
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/11.png') }}');"></div>
+            </div>
+            <div class="carousel-item h-100">
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/13.png') }}');"></div>
+            </div>
+            <div class="carousel-item h-100">
+                <div class="carousel-bg" style="background-image: url('{{ asset('images/renders/15.png') }}');"></div>
+            </div>
         </div>
     </div>
-</div>
-
 
     <!-- blur -->
     <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(56, 83, 75, 0.35); backdrop-filter: blur(5px); z-index: 1;"></div>
@@ -71,7 +70,7 @@
                     </div>
                     <h5 style="color: #be9c64;">Visión</h5>
                     <p>
-                        Por si no hubiese una, podria ser: Ser la referencia en el desarrollo de comunidades residenciales
+                        Ser la referencia en el desarrollo de comunidades residenciales
                         que promuevan un estilo de vida tranquilo.
                     </p>
                 </div>
@@ -84,7 +83,7 @@
                     </div>
                     <h5 style="color: #be9c64;">Misión</h5>
                     <p>
-                        Por si no hubiese una, podria ser: Diseñar y construir una comunidad que integra
+                        Diseñar y construir una comunidad que integra
                         tecnología, bienestar y conexión natural para mejorar la vida de las familias.
                     </p>
                 </div>
@@ -97,7 +96,7 @@
                     </div>
                     <h5 style="color: #be9c64;">Valores</h5>
                     <p>
-                        Por si no hubiese una, podria ser: Compromiso ambiental, diseño funcional, calidad humana
+                        Compromiso ambiental, diseño funcional, calidad humana
                         y respeto por el entorno natural.
                     </p>
                 </div>
@@ -110,19 +109,19 @@
 <section id="renders" class="section bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="section-title animate-fade-up">Explora nuestros renders</h2>
+            <h2 class="section-title animate-fade-up">Explora nuestros espacios</h2>
             <p class="section-subtitle animate-fade-up">
                 Visualiza cómo será tu nuevo hogar en Residencial Green Land
             </p>
         </div>
 
         <div class="row g-4">
-            @foreach (['7.jpg', '11.jpg', '13.jpg', '15.jpg'] as $img)
-                <div class="col-md-6 animate-fade-up">
-                    <div class="render-card shadow rounded overflow-hidden">
-                        <img src="{{ asset('images/renders/' . $img) }}" alt="Render {{ $img }}" class="img-fluid w-100">
-                    </div>
+            @foreach (['7.png', '11.png', '13.png', '15.png'] as $img)
+            <div class="col-md-6 animate-fade-up">
+                <div class="render-card shadow rounded overflow-hidden">
+                    <img src="{{ asset('images/renders/' . $img) }}" alt="Render {{ $img }}" class="img-fluid w-100">
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
@@ -270,7 +269,7 @@
 <section id="renders" class="section bg-light">
     <div class="container">
         <div class="text-center mb-4">
-            <h2 class="section-title animate-fade-up">Galería de renders</h2>
+            <h2 class="section-title animate-fade-up">Galería de imagenes</h2>
             <p class="section-subtitle animate-fade-up">
                 Desliza para explorar cómo se verá tu nuevo hogar
             </p>
@@ -279,12 +278,12 @@
         <div class="render-scroll-container animate-fade-up">
             <div class="render-scroll d-flex gap-3">
                 @foreach ([
-                    '1.png','2.jpg','3.png','4.png','5.jpg','7.jpg',
-                    '8.jpg','9.jpg','11.jpg','12.jpg','15.jpg','17.jpg'
+                '1.png','2.jpg','3.png','4.png','5.jpg','7.png',
+                '8.jpg','9.jpg','11.png','12.jpg','15.png','17.jpg'
                 ] as $img)
-                    <div class="render-item">
-                        <img src="{{ asset('images/renders/' . $img) }}" alt="Render {{ $img }}" class="img-fluid rounded shadow-sm" style="height: 220px; width: auto;">
-                    </div>
+                <div class="render-item">
+                    <img src="{{ asset('images/renders/' . $img) }}" alt="Render {{ $img }}" class="img-fluid rounded shadow-sm" style="height: 250px; width: auto;">
+                </div>
                 @endforeach
             </div>
         </div>
@@ -305,11 +304,11 @@
                     donde la naturaleza y el confort se encuentran
                 </p>
                 <div class="animate-fade-up">
-                    <a href="{{ route('maps') }}" class="hero-btn me-3">
+                    <a href="{{ route('maps') }}" class="hero-btn me-3 mb-4">
                         <i class="bi bi-geo-alt-fill"></i>
                         Ver Mapa
                     </a>
-                    <a href="#nosotros" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                    <a href="#nosotros" class="btn btn-outline-light btn-lg rounded-pill px-4 ">
                         <i class="bi bi-info-circle me-2"></i>
                         Más Información
                     </a>
