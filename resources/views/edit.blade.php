@@ -79,10 +79,10 @@
                     <input type="number" step="0.01" id="pcontado_porcent" name="pcontado_porcent" class="form-control">
                 </div>
 
-                {{-- <div class="col-md-6 mb-3">
+                <div class="col-md-6 mb-3 d-none">
                     <label for="vprima_porcent" class="form-label">porcentaje utilizado para sacar el valor de la prima</label>
                     <input type="number" step="0.01" id="vprima_porcent" name="vprima_porcent" class="form-control">
-                </div> --}}
+                </div> 
             </div>
 
             <div class="mb-3">
