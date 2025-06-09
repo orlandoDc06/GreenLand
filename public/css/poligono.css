@@ -75,7 +75,7 @@
     max-width: none;
     height: auto;
     width: auto;
-    min-width: 600px; /* Reducir mínimo para móviles */
+    min-width: 400px; /* Reducir mínimo para móviles */
 }
 
 /* Círculos base */
@@ -174,7 +174,7 @@
     }
 
     .map-image {
-        min-width: 500px; /* Reducir para tablets */
+        min-width: 400px; /* Reducir para tablets */
     }
 
     .circle {
