@@ -84,13 +84,13 @@
     width: 50px;
     height: 50px;
     background-color: #538D88CC;
-    border-radius: 55%;
+    border-radius: 50%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 14px; 
+    font-size: 14px;
     cursor: pointer;
     transition: transform 0.2s ease;
     z-index: 10;
@@ -103,14 +103,14 @@
 }
 
 .circle-name {
-    font-weight: bold;
-    font-size: 12px;
+    font-size: 8px;
+    line-height: 1;
 }
 
-.circle-available .small-text {
-    font-size: 10px;
+.circle-available {
+    font-size: 8px;
+    line-height: 1;
 }
-
 
 /* Estados de círculos */
 .circle.green {
