@@ -31,7 +31,11 @@
                 </select>
             </div>
 
-
+            <div class="text-center mb-4">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2 d-none">Editar Mapa</a>
+                <button type="button" id="btn-eliminar" class="btn btn-danger d-none">Eliminar</button>
+            </div>
             <!-- Contenedor de la imagen del polígono -->
             <div class="mb-4" style="margin-left: 120px;">
                 <div id="poligono-imagen-container" class="text-center border p-3 position-relative"
@@ -116,11 +120,7 @@
                 <input type="number" step="0.01" id="descuento" name="descuento" class="form-control" min="0" max="100">
             </div>
 
-            <div class="text-center mb-4">
-                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2 d-none">Editar Mapa</a>
-                <button type="button" id="btn-eliminar" class="btn btn-danger d-none">Eliminar</button>
-            </div>
+
         </form>
     </div>
 </div>
