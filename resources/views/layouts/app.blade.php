@@ -126,9 +126,10 @@
                         Residencial donde la naturaleza y el confort se encuentran para crear tu hogar ideal en Morazán.
                     </p>
                     <div class="d-flex gap-3">
-                        <a href="#" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/1GqW73XmCa/" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/green_land_sv?igsh=MTFrZ3o1bTZ6emFpZA==" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-instagram"></i></a>
+                        <a href="https://wa.me/50378596365" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greenlandsv2023@gmail.com" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-envelope-fill"></i></a>
                     </div>
                 </div>
 
@@ -142,7 +143,11 @@
                         </li>
                         <li class="mb-3 d-flex align-items-start gap-2">
                             <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:rgba(190,156,100,0.12); width:36px; height:36px;"><i class="bi bi-telephone-fill" style="color: #BE9C64; font-size:1.3rem;"></i></span>
-                            <span class="lh-sm">+503 1111-1111</span>
+                            <span class="lh-sm">+1 (551) 384-3472</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-start gap-2">
+                            <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:rgba(190,156,100,0.12); width:36px; height:36px;"><i class="bi bi-whatsapp" style="color: #BE9C64; font-size:1.3rem;"></i></span>
+                            <span class="lh-sm">+503 7859-4365</span>
                         </li>
                         <li class="mb-3 d-flex align-items-start gap-2">
                             <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:rgba(190,156,100,0.12); width:36px; height:36px;"><i class="bi bi-envelope-fill" style="color: #BE9C64; font-size:1.3rem;"></i></span>

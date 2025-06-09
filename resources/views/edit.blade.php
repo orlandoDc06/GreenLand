@@ -24,20 +24,9 @@
                     @endforeach
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="lote_id" class="form-label">Seleccionar Lote</label>
-                <select id="lote_id" name="lote_id" class="form-select" required>
-                    <option value="" selected disabled>Seleccione un lote</option>
-                </select>
-            </div>
 
-            <div class="text-center mb-4">
-                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2 d-none">Editar Mapa</a>
-                <button type="button" id="btn-eliminar" class="btn btn-danger d-none">Eliminar</button>
-            </div>
             <!-- Contenedor de la imagen del polígono -->
-            <div class="mb-4" style="margin-left: 120px;">
+            <div class="mb-4 d-none" style="margin-left: 120px;">
                 <div id="poligono-imagen-container" class="text-center border p-3 position-relative"
                     style="width: 800px; height: 1200px; overflow: auto; display: none;">
                     <img id="poligono-imagen" src="" alt="Imagen del polígono" style="display: block;">
@@ -50,6 +39,12 @@
             </div>
 
 
+            <div class="mb-3">
+                <label for="lote_id" class="form-label">Seleccionar Lote</label>
+                <select id="lote_id" name="lote_id" class="form-select" required>
+                    <option value="" selected disabled>Seleccione un lote</option>
+                </select>
+            </div>
 
             <div class="mb-3">
                 <label for="codigo_lote" class="form-label">Código de Lote</label>
@@ -104,7 +99,7 @@
                 </select>
             </div>
 
-            <div class="row">
+            <div class="row d-none">
                 <div class="col-md-6 mb-3">
                     <label for="coordenada_x" class="form-label">Coordenada X</label>
                     <input type="number" id="coordenada_x" name="coordenada_x" class="form-control">
@@ -120,7 +115,11 @@
                 <input type="number" step="0.01" id="descuento" name="descuento" class="form-control" min="0" max="100">
             </div>
 
-
+            <div class="text-center mb-4">
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                <a href="{{ route('edit.map') }}" class="btn btn-warning me-2 d-none">Editar Mapa</a>
+                <button type="button" id="btn-eliminar" class="btn btn-danger d-none">Eliminar</button>
+            </div>
         </form>
     </div>
 </div>

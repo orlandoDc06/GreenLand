@@ -40,9 +40,9 @@
                     Descubre Green Land Residencial, donde la arquitectura moderna
                     y la naturaleza se combinan para crear tu hogar ideal
                 </p>
-                <a href="#nosotros" class="hero-btn">
-                    <i class="bi bi-arrow-down-circle"></i>
-                    Conocer Más
+                <a href="{{ route('maps') }}" class="hero-btn">
+                    <i class="bi bi-arrow-up-circle"></i>
+                    Conocer mapa
                 </a>
             </div>
         </div>
