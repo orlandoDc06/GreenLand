@@ -129,7 +129,7 @@
                         <a href="https://www.facebook.com/share/1GqW73XmCa/" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-facebook"></i></a>
                         <a href="https://www.instagram.com/green_land_sv?igsh=MTFrZ3o1bTZ6emFpZA==" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-instagram"></i></a>
                         <a href="https://wa.me/50378596365" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-whatsapp"></i></a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greenlandsv2023@gmail.com" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-envelope-fill"></i></a>
+                        <a href="mailto:greenlandsv2023@gmail.com" class="hover-opacity-100" style="color: #BE9C64; font-size: 1.4rem;"><i class="bi bi-envelope-fill"></i></a>
                     </div>
                 </div>
 
