@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('css/scrollGaleria.css') }}">
-@section('title', 'GreenLand - Residencial Ecológico')
+@section('title', 'Green Land - Residencial')
 
 @section('content')
 <!-- Inicio -->
@@ -56,8 +56,8 @@
             <div class="col-12">
                 <h2 class="section-title animate-fade-up">Sobre nosotros</h2>
                 <p class="section-subtitle animate-fade-up">
-                    Creamos espacios donde la arquitectura moderna
-                    y la naturaleza se unen para brindarte la mejor clidad de vida
+                    Nuestro compromiso es ofrecer un estilo de vida equilibrado, rodeado de
+                    áreas verdes, arquitectura consciente y un entorno pensado para el bienestar de tu familia y del planeta
                 </p>
             </div>
         </div>
@@ -71,7 +71,7 @@
                     <h5 style="color: #be9c64;">Visión</h5>
                     <p>
                         Ser la referencia en el desarrollo de comunidades residenciales
-                        que promuevan un estilo de vida tranquilo.
+                        que promuevan un estilo de vida sostenible y tranquilo.
                     </p>
                 </div>
             </div>
@@ -134,8 +134,8 @@
             <div class="col-12">
                 <h2 class="section-title animate-fade-up">Nuestros beneficios</h2>
                 <p class="section-subtitle animate-fade-up">
-                    Cada uno de nuestros lotes te ofrece lo necesario
-                    para mejora tu estilo de vida
+                    Aquí no solo encuentras un lugar para construir tu casa, encuentras un lugar donde
+                    crecer, compartir y vivir mejor.
                 </p>
             </div>
         </div>
@@ -147,7 +147,7 @@
                     <i class="bi bi-house-door service-icon" style="color: #18332c;"></i>
                     <h5 style="color: #18332c;">Generales</h5>
                     <p>
-                        Calles adoquinadas, luz electrica y alumbrado publico, agua potable,
+                        Calles adoquinadas, luz electrica y alumbrado publico, agua potable, muro perimentral y
                         servicios de recolección de basura.
                     </p>
                 </div>
@@ -190,7 +190,7 @@
                     <i class="bi bi-water service-icon" style="color: #18332c;"></i>
                     <h5 style="color: #18332c;">Amenidades</h5>
                     <p>
-                        Piscina, juegos infantiles, cancha mixta, gimnasio y un salón de usos multiple
+                        Areas de juegos, casa club, area de picnic, piscina, cancha mixta, gimnasio y areas verdes.
                     </p>
                 </div>
             </div>
@@ -242,7 +242,7 @@
                 <div class="text-center">
                     <i class="bi bi-clock service-icon" style="font-size: 2.5rem; color: #be9c64;"></i>
                     <h6 class="mt-3 fw-bold">Menos de 5min desde el centro</h6>
-                    <p class="text-muted mb-0">Acceso rápido al centro de la ciudad</p>
+                    <p class="text-muted mb-0">Acceso rápido al centro de la ciudad y a 10min de San Francisco Gotera</p>
                 </div>
             </div>
 
@@ -250,7 +250,7 @@
                 <div class="text-center">
                     <i class="bi bi-building service-icon" style="font-size: 2.5rem; color: #be9c64;"></i>
                     <h6 class="mt-3 fw-bold">Cerca de todo</h6>
-                    <p class="text-muted mb-0">Escuelas, iglesia y diferentes comercios</p>
+                    <p class="text-muted mb-0">Escuelas, iglesias, diferentes comercios y puntos turisticos como Perkin</p>
                 </div>
             </div>
 
