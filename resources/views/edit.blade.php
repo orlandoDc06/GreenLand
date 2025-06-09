@@ -24,6 +24,13 @@
                     @endforeach
                 </select>
             </div>
+            <div class="mb-3">
+                <label for="lote_id" class="form-label">Seleccionar Lote</label>
+                <select id="lote_id" name="lote_id" class="form-select" required>
+                    <option value="" selected disabled>Seleccione un lote</option>
+                </select>
+            </div>
+
 
             <!-- Contenedor de la imagen del polígono -->
             <div class="mb-4" style="margin-left: 120px;">
@@ -39,12 +46,6 @@
             </div>
 
 
-            <div class="mb-3">
-                <label for="lote_id" class="form-label">Seleccionar Lote</label>
-                <select id="lote_id" name="lote_id" class="form-select" required>
-                    <option value="" selected disabled>Seleccione un lote</option>
-                </select>
-            </div>
 
             <div class="mb-3">
                 <label for="codigo_lote" class="form-label">Código de Lote</label>
