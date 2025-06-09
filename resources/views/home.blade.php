@@ -37,7 +37,7 @@
                     En la <span style="color: #be9c64;">naturaleza</span>, se vive mejor
                 </h2>
                 <p class="lead mb-4">
-                    Descubre GreenLand Residencial, donde la arquitectura moderna
+                    Descubre Green Land Residencial, donde la arquitectura moderna
                     y la naturaleza se combinan para crear tu hogar ideal
                 </p>
                 <a href="#nosotros" class="hero-btn">
