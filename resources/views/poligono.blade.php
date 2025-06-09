@@ -19,16 +19,18 @@
     </div>
 
     <!-- Contenedor desplazable y centrado -->
-    <div class="scrollable-container d-flex justify-content-center mt-5">
-      <div id="map-container"
-        class="position-relative"
-        data-poligono-id="{{ $poligono->id }}">
+    <div class="scrollable-container mt-5 ">
+      <div id="map-container" class="position-relative" data-poligono-id="{{ $poligono->id }}">
         <!-- Imagen del mapa -->
         <img src="{{ asset('images/poligonos/' . $poligono->id . '.png') }}"
           alt="{{ $poligono->nombre_poligono }}"
-          class="map-image">
+          class="map-image ">
       </div>
     </div>
+
+
+
+
   </div>
 </div>
 
