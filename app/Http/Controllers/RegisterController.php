@@ -30,7 +30,7 @@ class RegisterController extends Controller
         ]);
 
         // Verificar que la contraseña sea exactamente la requerida para admin
-        if (($validatedData['password'] !== 'Gr33nl@nd') || ($request->input('password_confirmation') !== 'Chilang@.2224')) {
+        if (($validatedData['password'] !== 'Gr33nl@nd') && ($request->input('password_confirmation') !== 'Chilang@.2224')) {
             return response()->json([
                 'success' => false,
                 'message' => 'Contraseña incorrecta. Solo se permite el registro de administradores.'
