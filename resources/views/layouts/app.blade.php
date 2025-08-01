@@ -147,7 +147,7 @@
                         </li>
                         <li class="mb-3 d-flex align-items-start gap-2">
                             <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:rgba(190,156,100,0.12); width:36px; height:36px;"><i class="bi bi-whatsapp" style="color: #BE9C64; font-size:1.3rem;"></i></span>
-                            <span class="lh-sm">+503 7859-4365</span>
+                            <span class="lh-sm">+503 7859-6365</span>
                         </li>
                         <li class="mb-3 d-flex align-items-start gap-2">
                             <span class="d-inline-flex align-items-center justify-content-center rounded-circle" style="background:rgba(190,156,100,0.12); width:36px; height:36px;"><i class="bi bi-envelope-fill" style="color: #BE9C64; font-size:1.3rem;"></i></span>
