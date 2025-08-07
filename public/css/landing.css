@@ -1,0 +1,726 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', 'Montserrat', 'Segoe UI', Arial, sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    overflow-x: hidden;
+}
+
+/* Navbar personalizada */
+.navbar {
+    background: transparent !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #333 !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand {
+    color: #003D2B !important;
+}
+
+.navbar-brand img {
+    height: 35px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.navbar.scrolled .nav-link {
+    color: #333 !important;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #003D2B !important;
+    background: rgba(0, 61, 43, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: #003D2B !important;
+    background: rgba(0, 61, 43, 0.1);
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+.navbar.scrolled .navbar-toggler {
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: url('/images/hero-bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 60px 0;
+}
+
+.hero::before {     
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 61, 43, 0.39);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilos específicos para la navbar en el hero */
+body:has(.hero) .navbar {
+    background: transparent !important;
+}
+
+body:has(.hero) .navbar .navbar-brand,
+body:has(.hero) .navbar .nav-link {
+    color: #fff !important;
+}
+
+body:has(.hero) .navbar .navbar-toggler {
+    color: #fff;
+}
+
+body:has(.hero) .navbar .nav-link:hover,
+body:has(.hero) .navbar .nav-link.active {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+body:has(.hero) .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.98) !important;
+}
+
+body:has(.hero) .navbar.scrolled .navbar-brand,
+body:has(.hero) .navbar.scrolled .nav-link {
+    color: #333 !important;
+}
+
+body:has(.hero) .navbar.scrolled .navbar-toggler {
+    color: #333;
+}
+
+body:has(.hero) .navbar.scrolled .nav-link:hover,
+body:has(.hero) .navbar.scrolled .nav-link.active {
+    color: #003D2B !important;
+    background: rgba(0, 61, 43, 0.1);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.hero h1 .text-green,
+.hero h1 span[style*="#1a73e8"] {
+    color: #00543B !important;
+}
+
+.hero .lead {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: #003D2B;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 30px rgba(0, 61, 43, 0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.hero-btn:hover {
+    background: #002A1D;
+    box-shadow: 0 12px 40px rgba(0, 61, 43, 0.4);
+}
+
+/* Secciones generales */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #003D2B 0%, #00543B 100%);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Sección Nosotros */
+.about-section {
+    background: #f8f9fa;
+    position: relative;
+}
+
+.about-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(0, 61, 43, 0.1);
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-color: #003D2B;
+}
+
+.about-card h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #003D2B;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-card p {
+    color: #666;
+    line-height: 1.7;
+    text-align: center;
+    margin: 0;
+}
+
+/* Sección Servicios */
+.services-section {
+    background: #fff;
+}
+
+.service-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 1px solid rgba(0, 61, 43, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-color: #003D2B;
+}
+
+.service-icon {
+    font-size: 4rem;
+    color: #003D2B;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #002A1D !important;
+}
+
+.service-card h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Sección Mapa */
+.map-section {
+    background: #f8f9fa;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #00c194 0%, #43e97b 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.map-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+}
+
+.map-placeholder p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+footer p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.8s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .lead {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .service-card,
+    .about-card {
+        margin-bottom: 2rem;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0.2rem 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 100px 0 40px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Dropdown personalizado */
+.dropdown-menu {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.7rem 1.5rem;
+    transition: all 0.2s ease;
+    border-radius: 0;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 193, 148, 0.1);
+    color: #00c194;
+}
+
+.dropdown-item.text-danger:hover {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+/* Efectos hover para enlaces */
+.hover-opacity-100:hover {
+    opacity: 1 !important;
+    transition: opacity 0.3s ease;
+}
+
+/* Botón de registro en navbar */
+.navbar-nav .nav-link.btn {
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+}
+
+/* Efectos adicionales para cards */
+.about-card,
+.service-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card::before,
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(26, 115, 232, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.about-card:hover::before,
+.service-card:hover::before {
+    left: 100%;
+}
+
+/* Mejoras para el hero section */
+.hero {
+    background-image: 
+        linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Animación para los iconos de servicio */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.service-card:hover .service-icon {
+    animation: pulse 0.6s ease-in-out;
+}
+
+/* Efectos de texto */
+.text-gradient {
+    background: linear-gradient(135deg, #00c194 0%, #43e97b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Input groups mejorados */
+.input-group .form-control {
+    border-radius: 25px 0 0 25px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.input-group .form-control::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.input-group .form-control:focus {
+    border-color: #00c194;
+    box-shadow: 0 0 0 0.2rem rgba(0, 193, 148, 0.25);
+    background: rgba(255,255,255,0.15);
+}
+
+.input-group .btn {
+    border-radius: 0 25px 25px 0;
+    border: 2px solid #00c194;
+    background: #00c194;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00c194;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #018f6a;
+}
+
+/* Loading animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale {
+    animation: fadeInScale 0.6s ease-out;
+}
+
+/* Botones con efecto ripple */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.btn-ripple:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Estilos para el formulario de suscripción */
+.newsletter-form .form-control {
+    border-radius: 8px 0 0 8px;
+    border: 1px solid rgba(190,156,100,0.3);
+    background: rgba(255,255,255,0.1) !important;
+    color: #fff !important;
+    height: 45px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.newsletter-form .form-control:focus {
+    border-color: #BE9C64;
+    box-shadow: 0 0 0 0.2rem rgba(190,156,100,0.25);
+    background: rgba(255,255,255,0.15) !important;
+}
+
+.newsletter-form .form-control::placeholder {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 8px 8px 0;
+    background: #BE9C64;
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form .btn i {
+    font-size: 1.1rem;
+}
+
+.newsletter-form .btn:hover {
+    background: #a88a57;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(190,156,100,0.3);
+}
+
+.newsletter-form .input-group {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+/* Navbar especial para login y registro */
+body.login-page .navbar,
+body.register-page .navbar {
+    background: #fff !important;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+body.login-page .navbar .navbar-brand,
+body.register-page .navbar .navbar-brand,
+body.login-page .navbar .nav-link,
+body.register-page .navbar .nav-link {
+    color: #003D2B !important;
+}
+body.login-page .navbar .navbar-toggler,
+body.register-page .navbar .navbar-toggler {
+    color: #003D2B;
+}
+
+/* Espaciado superior para el formulario de registro */
+.register-section {
+    padding-top: 120px !important;
+}
+
+
+main.internal {
+    padding-top: 80px;
+}

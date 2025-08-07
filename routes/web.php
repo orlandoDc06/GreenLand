@@ -2,7 +2,7 @@
 use App\Models\Lote;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PoligonoController;
-use App\Http\Controllers\AuthController;    
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LoteController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\RegisterController;
@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/mapa', function () {
     return view('maps');
 })->name('mapa');
+
+Route::view('/maps', 'maps')->name('maps');
 
 
 //LOGIN
@@ -55,7 +57,7 @@ Route::post('/poligonos/update', [PoligonoController::class, 'update'], function
     ->name('poligonos.update');
 
 //MOSTRAR POLIGONO
-Route::get('/poligonos/{id}', [PoligonoController::class, 'show'])->name('poligonos.show');
+Route::get('/poligonos/{id}', [PoligonoController::class, 'mostrar'])->name('poligonos.mostrar');
 
 // API LOTES POR POLÍGONO
 Route::get('/api/lotes/{poligono}', [LoteController::class, 'getLotesByPoligono'])->name('lotes.byPoligono');
